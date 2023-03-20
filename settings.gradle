@@ -1,0 +1,6 @@
+rootProject.name = 'blog-search-engine'
+
+include "module-client"
+include "module-common"
+include "module-core"
+include "module-external-api"
