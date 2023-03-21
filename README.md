@@ -34,7 +34,8 @@ http://localhost:8080/docs/dev-guide.html
 ![image](https://user-images.githubusercontent.com/47946124/226191928-ec3c4186-b44d-4b51-bcc6-3d89b94d7fa3.png)  
    
   
-기본적인 REST API 예외는 @ControllerAdvice로 구현하고 WebClient를 통해 외부 API에서 발생한 예외를 그대로 받아서 처리하는 BlogSearchEngineResponseException 클래스 파일을 생성해서 사용했습니다.
+기본적인 REST API 예외는 @ControllerAdvice로 구현했습니다.  
+WebClient를 통해 외부 API에서 발생한 예외를 받는 것 또한 사용자가 볼 수 있도록 위와 같이 처리했습니다.
 
 ## 멀티 모듈 구성 및 모듈간 의존성 제약
   
