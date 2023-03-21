@@ -36,14 +36,14 @@ http://localhost:8080/docs/dev-guide.html
   
 기본적인 REST API 예외는 @ControllerAdvice로 구현하고 WebClient를 통해 외부 API에서 발생한 예외를 그대로 받아서 처리하는 BlogSearchEngineResponseException 클래스 파일을 생성해서 사용했습니다.
 
-## 멀티 모듈 
+## 멀티 모듈 구성 및 모듈간 의존성 제약
   
 ![image](https://user-images.githubusercontent.com/47946124/226526271-bbf5b02b-b666-4286-bc33-11f3651aa314.png)  
 
 **module-internal-api - (controller)**  
 
 클라이언트 웹 접근에 대한 용도로 모듈화 했으며 현재 재직중인 금융권에서도 그렇고  
-대부분의 금융권에서는 자금이 움직이는 상황에 이러한 Core에 대한 모듈 분리는 필수라고 생각합니다.  
+대부분의 금융권에서는 자금이 움직이는 상황에 이러한 Client가 접근하는 Web영역과 Core에 대한 모듈 분리는 필수라고 생각해서 위와 같이 분리했습니다.
 
 **module-core (service, repository, domain)**  
 
