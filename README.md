@@ -18,7 +18,7 @@ http://localhost:8080/docs/dev-guide.html
 - Ehcache - **인기 검색어 조회로 인한 DB 과부하를 막기 위해 사용했습니다.**  
 
 
-## 카카오 API 이외에 새로운 검색 소스가 추가될 수 있음을 고려하기
+## 1. 카카오 API 이외에 새로운 검색 소스가 추가될 수 있음을 고려하기
 → **SearchProvider Interface를 구현하여 새로운 검색 소스가 늘어나더라도 연결이 쉽도록 구현했습니다.**  
    
   
@@ -26,7 +26,7 @@ http://localhost:8080/docs/dev-guide.html
 
 
 
-## 에러 처리(Exception Handling)
+## 2. 에러 처리(Exception Handling)
 
 → **외부 API 예외를 그대로 구현**  
    
@@ -37,7 +37,7 @@ http://localhost:8080/docs/dev-guide.html
 기본적인 REST API 예외는 @ControllerAdvice로 구현했습니다.  
 WebClient를 통해 외부 API에서 발생한 예외를 받는 것 또한 사용자가 볼 수 있도록 위와 같이 처리했습니다.
 
-## 멀티 모듈 구성 및 모듈간 의존성 제약
+## 3. 멀티 모듈 구성 및 모듈간 의존성 제약
   
 ![image](https://user-images.githubusercontent.com/47946124/226526271-bbf5b02b-b666-4286-bc33-11f3651aa314.png)  
 
@@ -59,7 +59,7 @@ WebClient를 통해 외부 API에서 발생한 예외를 받는 것 또한 사�
 각 모듈의 프로젝트마다 갖다 쓸 수 있는 부분은 common으로 모듈화 했습니다.  
   
 
-## 트래픽이 많고, 저장되어 있는 데이터가 많음을 염두에 둔 구현  
+## 4. 트래픽이 많고, 저장되어 있는 데이터가 많음을 염두에 둔 구현  
    
   
 → **Ehcache를 사용해 부하 개선**  
@@ -73,7 +73,7 @@ Ehcache는 적용하기가 쉽고 백단의 DB가 죽어도 캐시된 시간만�
 ![image](https://user-images.githubusercontent.com/47946124/226527768-4d8ee5b1-1446-425c-8f53-c71dcc802ff1.png)
 
 
-## 동시성 이슈가 발생할 수 있는 부분을 염두에 둔 구현
+## 5. 동시성 이슈가 발생할 수 있는 부분을 염두에 둔 구현
    
   
 ![image](https://user-images.githubusercontent.com/47946124/226192557-98898e24-8514-4a97-b40f-74d1a21406a5.png)  
@@ -85,7 +85,7 @@ Ehcache는 적용하기가 쉽고 백단의 DB가 죽어도 캐시된 시간만�
 
 
 
-## 카카오 블로그 검색 API에 장애가 발생한 경우, 네이버 블로그 검색 API를 통해 데이터 제공
+## 6. 카카오 블로그 검색 API에 장애가 발생한 경우, 네이버 블로그 검색 API를 통해 데이터 제공
    
   
 ![image](https://user-images.githubusercontent.com/47946124/226195282-c287d649-a311-494d-94a8-71f90bfb3d1c.png)
