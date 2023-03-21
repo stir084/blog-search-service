@@ -16,9 +16,6 @@ import org.springframework.web.util.UriComponentsBuilder;
 @RequiredArgsConstructor
 public class NaverBlogSearchProvider implements SearchProvider {
 
-  /*  private static final String NAVER_ID_API_KEY = "sGiEIy0nq_I1kNxT9WdJ";
-    private static final String NAVER_SECRET_API_KEY= "ptTQIuWDRB";
-*/
     private final NaverBlogSearchRequest naverBlogSearchRequest;
 
     @Override
@@ -52,17 +49,6 @@ public class NaverBlogSearchProvider implements SearchProvider {
         return blogSearchResult;
 
     }
-
-   /* public NaverBlogSearchResultDto webClientRequest(WebClient webClient, UriComponentsBuilder builder) {
-        return webClient.get()
-                .uri(builder.build(false).toUriString())
-                .header( "CONTENT_TYPE", MediaType.APPLICATION_JSON_VALUE)
-                .header("X-Naver-Client-Id", NAVER_ID_API_KEY)
-                .header("X-Naver-Client-Secret", NAVER_SECRET_API_KEY)
-                .retrieve()
-                .bodyToMono(NaverBlogSearchResultDto.class)
-                .block();
-    }*/
 
     @Override
     public BlogSearchSortType getAccuracy() {
