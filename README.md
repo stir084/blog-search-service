@@ -53,20 +53,20 @@ http://localhost:8080/docs/dev-guide.html
   
 ![image](https://user-images.githubusercontent.com/47946124/226533158-2d3bc1c4-83bf-43fc-9a54-5fbf12d4f402.png)
 
-### **module-client - (controller)**  
+**module-client - (controller)**  
 
 클라이언트 웹 접근에 대한 용도로 모듈화 했으며 현재 재직중인 금융 회사에서도 EAI를 사용한 모듈 분리를 필수적으로 사용하고 있습니다.  
 대부분의 금융권에서는 자금이 움직이는 상황에 Client가 접근하는 Web영역과 Core에 대한 모듈 분리는 필수라고 생각해서 위와 같이 분리했습니다.
 
-### **module-core (service, repository, domain)**  
+**module-core (service, repository, domain)**  
 
 필수 도메인과 비즈니스로직이 여기에 포함됩니다.  
 
-### **module-external-api (외부 API 연결)**  
+**module-external-api (외부 API 연결)**  
 
 외부 API를 모듈화 했으며 해당 API를 언제 어느 프로젝트에서도 갖다 쓸 수 있도록 모듈화 했습니다.  
 
-### **module-common (exception dto)**  
+**module-common (exception dto)**  
 
 각 모듈의 프로젝트마다 갖다 쓸 수 있는 부분은 common으로 모듈화 했습니다.  
   
