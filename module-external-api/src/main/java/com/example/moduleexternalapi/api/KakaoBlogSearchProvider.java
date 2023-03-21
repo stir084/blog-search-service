@@ -5,18 +5,26 @@ import com.example.modulecommon.dto.KakaoBlogSearchResultDto;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.web.reactive.function.client.WebClient;
 import org.springframework.web.reactive.function.client.WebClientResponseException;
 import org.springframework.web.util.UriComponentsBuilder;
 
 @Service
+@RequiredArgsConstructor
 public class KakaoBlogSearchProvider implements SearchProvider {
 
+    private final KakaoBlogSearchRequest kakaoBlogSearchRequest;
+
+    @Override
+    public WebClient createWebClient() {
+        return WebClient.create("https://dapi.kakao.com/v2/search/blog");
+    }
 
     @Override
     public BlogSearchResultDto search(String keyword, BlogSearchSortType sort, int page, int size) {
-        WebClient webClient = WebClient.create("https://dapi.kakao.com/v2/search/blog");
+        WebClient webClient = createWebClient();
         UriComponentsBuilder builder = UriComponentsBuilder.fromUriString("https://dapi.kakao.com/v2/search/blog");
         builder.queryParam("query", keyword)
                 .queryParam("sort", sort)
@@ -24,13 +32,7 @@ public class KakaoBlogSearchProvider implements SearchProvider {
                 .queryParam("size", size);
         KakaoBlogSearchResultDto kakaoBlogSearchResultDto;
         try {
-            kakaoBlogSearchResultDto = webClient.get()
-                .uri(builder.build(false).toUriString())
-                .header("Authorization", "KakaoAK d326c8eb5c802411de9602adfb3c2f25")
-                .retrieve()
-                .bodyToMono(KakaoBlogSearchResultDto.class)
-                .block();
-
+            kakaoBlogSearchResultDto = kakaoBlogSearchRequest.requestBlogSearch(webClient, builder);
         } catch (WebClientResponseException e) {
             e.printStackTrace();
             throw e;
