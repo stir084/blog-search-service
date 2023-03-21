@@ -1,31 +1,4 @@
-plugins {
-    id 'java'
-    id 'org.springframework.boot' version '3.0.4'
-    id 'io.spring.dependency-management' version '1.1.0'
-}
-
-group = 'com.example'
-version = '0.0.1-SNAPSHOT'
-sourceCompatibility = '17'
-
-repositories {
-    mavenCentral()
-}
-
 dependencies {
-    implementation 'org.springframework.boot:spring-boot-starter'
-    implementation 'org.springframework.boot:spring-boot-starter-web'
-    implementation 'org.springframework.boot:spring-boot-starter-cache'
-    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
-    implementation 'org.springframework.boot:spring-boot-starter-webflux'
-    implementation 'org.ehcache:ehcache:3.9.8'
-    implementation 'javax.cache:cache-api:1.1.1'
-    implementation 'javax.xml.bind:jaxb-api:2.3.1'
-    implementation 'org.glassfish.jaxb:jaxb-runtime:2.3.1' // Java 9 이상에서 xml binding이 포함이 안되어있어서 JAXB 라이브러리 등록
-
+    api 'org.springframework.boot:spring-boot-starter-webflux'
     implementation project(':module-common')
-}
-
-tasks.named('test') {
-    useJUnitPlatform()
 }
