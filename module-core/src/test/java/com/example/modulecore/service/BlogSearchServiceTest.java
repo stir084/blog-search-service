@@ -129,9 +129,6 @@ public class BlogSearchServiceTest {
         int page = 1;
         int size = 10;
 
-        KakaoBlogSearchResultDto kakaoBlogSearchResultDto = getKakaoBlogSearchResultDto();
-        BlogSearchResultDto blogSearchResultDto = new BlogSearchResultDto(kakaoBlogSearchResultDto);
-
         when(kakaoSearchProvider.search(anyString(), any(BlogSearchSortType.class), anyInt(), anyInt())).thenThrow(RuntimeException.class);
         when(kakaoSearchProvider.getAccuracy()).thenReturn(BlogSearchSortType.ACCURACY);
         when(naverSearchProvider.search(anyString(), any(BlogSearchSortType.class), anyInt(), anyInt())).thenThrow(RuntimeException.class);
@@ -139,7 +136,6 @@ public class BlogSearchServiceTest {
 
         assertThrows(AllSearchProvidersFailedException.class,
                 () -> blogSearchService.searchBlog(keyword, sort, page, size));
-
 
     }
 

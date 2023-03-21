@@ -28,9 +28,8 @@ dependencies {
     implementation 'org.ehcache:ehcache:3.9.8'
     implementation 'javax.cache:cache-api:1.1.1'
     implementation 'javax.xml.bind:jaxb-api:2.3.1'
-    implementation 'org.glassfish.jaxb:jaxb-runtime:2.3.1' // Java 9 이상에서 xml binding이 포함이 안되어있어서 JAXB 라이브러리 등록
+    implementation 'org.glassfish.jaxb:jaxb-runtime:2.3.1' // Ehcache 사용 시 Java 9 이상에서 xml binding이 포함이 안돼서 등록
 
-    /*testImplementation 'io.projectreactor:reactor-test'*/
     testImplementation 'org.springframework.restdocs:spring-restdocs-mockmvc'
 
     implementation project(':module-core')
