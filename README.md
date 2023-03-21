@@ -4,6 +4,8 @@
 
 https://github.com/stir084/blog-search-service/releases/download/v1.0.0/blog-search-service.jar
 
+java -jar blog-search-service-v1.0.0.jar
+
 ## API 명세서(Spring Rest Docs)
 
 http://localhost:8080/docs/dev-guide.html
