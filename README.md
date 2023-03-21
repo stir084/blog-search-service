@@ -50,9 +50,10 @@ WebClient를 통해 외부 API에서 발생한 예외를 받는 것 또한 사�
 
 ## 멀티 모듈 구성 및 모듈간 의존성 제약
   
-![image](https://user-images.githubusercontent.com/47946124/226526271-bbf5b02b-b666-4286-bc33-11f3651aa314.png)  
+  
+![image](https://user-images.githubusercontent.com/47946124/226533158-2d3bc1c4-83bf-43fc-9a54-5fbf12d4f402.png)
 
-**module-internal-api - (controller)**  
+**module-client - (controller)**  
 
 클라이언트 웹 접근에 대한 용도로 모듈화 했으며 현재 재직중인 금융권에서도 EAI를 사용한 모듈 분리를 사용하고 있습니다.  
 대부분의 금융권에서는 자금이 움직이는 상황에 Client가 접근하는 Web영역과 Core에 대한 모듈 분리는 필수라고 생각해서 위와 같이 분리했습니다.
