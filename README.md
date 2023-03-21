@@ -42,7 +42,7 @@ http://localhost:8080/docs/dev-guide.html
 
 **module-internal-api - (controller)**  
 
-클라이언트 웹 접근에 대한 용도로 모듈화 했으며 현재 재직중인 금융권에서도 EAI를 사용한 모듈 분리를 사용하고 있습니다. 
+클라이언트 웹 접근에 대한 용도로 모듈화 했으며 현재 재직중인 금융권에서도 EAI를 사용한 모듈 분리를 사용하고 있습니다.  
 대부분의 금융권에서는 자금이 움직이는 상황에 이러한 Client가 접근하는 Web영역과 Core에 대한 모듈 분리는 필수라고 생각해서 위와 같이 분리했습니다.
 
 **module-core (service, repository, domain)**  
