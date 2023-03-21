@@ -17,6 +17,7 @@ http://localhost:8080/docs/dev-guide.html
 - WebFlux - **WebClient를 통한 API 호출을 위해 사용했습니다.**  
 - Ehcache - **인기 검색어 조회로 인한 DB 과부하를 막기 위해 사용했습니다.**  
 
+1. [ㄷㄷㄷ](## 2. 에러 처리(Exception Handling)
 
 ## 1. 카카오 API 이외에 새로운 검색 소스가 추가될 수 있음을 고려하기
 → **SearchProvider Interface를 구현하여 새로운 검색 소스가 늘어나더라도 연결이 쉽도록 구현했습니다.**  
