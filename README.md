@@ -70,7 +70,8 @@ WebClient를 통해 외부 API에서 발생한 예외를 받는 것 또한 사�
 Ehcache는 적용하기가 쉽고 백단의 DB가 죽어도 캐시된 시간만큼은 데이터를 보장 받는다는 장점이 있습니다. 30초마다 캐시가 삭제되도록 구현했습니다.  
 
 상위 인기 검색어를 확인하기 위해 임시 Dummy 데이터를 삽입하여 확인했습니다.  
-![image](https://user-images.githubusercontent.com/47946124/226196005-185c993d-b5d4-4795-bf5b-a67c32ccc37e.png)
+![image](https://user-images.githubusercontent.com/47946124/226527768-4d8ee5b1-1446-425c-8f53-c71dcc802ff1.png)
+
 
 ## 동시성 이슈가 발생할 수 있는 부분을 염두에 둔 구현
    
@@ -78,7 +79,7 @@ Ehcache는 적용하기가 쉽고 백단의 DB가 죽어도 캐시된 시간만�
 ![image](https://user-images.githubusercontent.com/47946124/226192557-98898e24-8514-4a97-b40f-74d1a21406a5.png)  
 
 검색 횟수의 동시성 이슈가 발생할 여지로 인해 Pessimistic Lock을 사용했습니다.  
-하지만 이미 이 부분에 있어서는 MYSQL의 MVCC 기능으로 인해 동시성 이슈가 처리가 될걸로 예상합니다.  
+하지만 이미 이 부분에 있어서는 MYSQL의 MVCC 기능도 적용된다고 생각하는데 이유는 아래와 같습니다.
 
 - [MVCC가 적용된다고 생각하는 이유](https://github.com/stir084/blog-search-engine/wiki/MVCC%EA%B0%80-%EC%A0%81%EC%9A%A9%EB%90%9C%EB%8B%A4%EA%B3%A0-%EC%83%9D%EA%B0%81%ED%95%98%EB%8A%94-%EC%9D%B4%EC%9C%A0)
 
@@ -89,5 +90,5 @@ Ehcache는 적용하기가 쉽고 백단의 DB가 죽어도 캐시된 시간만�
   
 ![image](https://user-images.githubusercontent.com/47946124/226195282-c287d649-a311-494d-94a8-71f90bfb3d1c.png)
 
-카카오 블로그 검색 API에 장애가 발생한 경우 일반적으로 500 Error가 발생했다고 가정합니다.  
+카카오 블로그 검색 API에 장애가 발생한 경우 일반적으로 500 Error가 발생했다고 가정했습니다.(물론 503 Error도 있지만)
 500 Error 발생 시 예외를 잡아서 던지지 않고 for문을 이용해 SearchProvider를 구현한 API를 반복적으로 돌아서 그 다음의 API를 통해 데이터를 제공하는 형태로 구현했습니다.
