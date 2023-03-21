@@ -9,9 +9,7 @@ import org.springframework.cache.annotation.EnableCaching;
 )
 @EnableCaching
 public class ModuleClientApplication {
-
     public static void main(String[] args) {
         SpringApplication.run(ModuleClientApplication.class, args);
     }
-
 }
