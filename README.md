@@ -87,7 +87,8 @@ WebClient를 통한 외부 API에서 발생한 예외 또한 사용자가 볼 �
   
 ![image](https://user-images.githubusercontent.com/47946124/226192129-ae41d97b-3bc0-4ede-a805-b53aab905be4.png)  
 인기 검색어 목록은 트래픽이 많고 저장되어 있는 데이터가 굉장히 많기 때문에 실시간 반응보다 캐시를 이용하는 것이 DB 부하를 줄일 수 있어서 Ehcache를 사용했습니다.  
-Ehcache는 적용하기가 쉽고 백단의 DB가 죽어도 캐시된 시간만큼은 데이터를 보장 받는다는 장점이 있습니다. 30초마다 캐시가 삭제되도록 구현했습니다.  
+Ehcache는 적용하기가 쉽고 백단의 DB가 죽어도 캐시된 시간만큼은 데이터를 보장 받는다는 장점이 있습니다.  
+30초마다 캐시가 삭제되도록 구현했습니다.  
 
 상위 인기 검색어를 확인하기 위해 임시 Dummy 데이터를 삽입하여 확인했습니다.  
 ![image](https://user-images.githubusercontent.com/47946124/226527768-4d8ee5b1-1446-425c-8f53-c71dcc802ff1.png)
