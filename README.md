@@ -15,7 +15,8 @@ http://localhost:8080/docs/dev-guide.html
 - JPA
 - Junit 5
 - WebFlux - **WebClient를 통한 API 호출을 위해 사용했습니다.**  
-- Ehcache 3 - **인기 검색어 조회로 인한 DB 과부하를 막기 위해 사용했습니다.**  
+- Ehcache 3(with jaxb library) - **인기 검색어 조회로 인한 DB 과부하를 막기 위해 사용했습니다.**  
+- Spring Rest Docs - **API 명세서를 위해 사용했습니다.**
 
 ## 목차  
   
