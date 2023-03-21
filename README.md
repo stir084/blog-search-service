@@ -46,7 +46,7 @@ http://localhost:8080/docs/dev-guide.html
    
   
 기본적인 REST API 예외는 @ControllerAdvice로 구현했습니다.  
-WebClient를 통해 외부 API에서 발생한 예외를 받는 것 또한 사용자가 볼 수 있도록 위와 같이 처리했습니다.
+외부 API에서 발생한 예외를 받는 것 또한 사용자가 볼 수 있도록 위와 같이 처리했습니다.
 
 ## 멀티 모듈 구성 및 모듈간 의존성 제약
   
@@ -55,7 +55,7 @@ WebClient를 통해 외부 API에서 발생한 예외를 받는 것 또한 사�
 
 **module-client - (controller)**  
 
-클라이언트 웹 접근에 대한 용도로 모듈화 했으며 현재 재직중인 금융권에서도 EAI를 사용한 모듈 분리를 사용하고 있습니다.  
+클라이언트 웹 접근에 대한 용도로 모듈화 했으며 현재 재직중인 금융 회사에서도 EAI를 사용한 모듈 분리를 필수적으로 사용하고 있습니다.  
 대부분의 금융권에서는 자금이 움직이는 상황에 Client가 접근하는 Web영역과 Core에 대한 모듈 분리는 필수라고 생각해서 위와 같이 분리했습니다.
 
 **module-core (service, repository, domain)**  
