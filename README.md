@@ -45,7 +45,7 @@ http://localhost:8080/docs/dev-guide.html
 API 서버에 장애가 발생한 경우 일반적으로 500 Error가 발생했다고 가정했습니다.(물론 503 Error도 있지만)  
 500 Error 발생 시 예외를 잡아서 통과 시키는 방식으로 구현하고 두번째 SearchProvider 구현체를 통해 API 데이터를 제공하는 형태로 구현했습니다.  
 
-## 에러 처리
+## 에러 처리(Exception Handling)
 
 → **외부 API 예외를 그대로 구현**  
    
