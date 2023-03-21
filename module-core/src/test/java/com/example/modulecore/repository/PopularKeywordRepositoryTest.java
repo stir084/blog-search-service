@@ -1,6 +1,7 @@
 package com.example.modulecore.repository;
 
 import com.example.modulecore.domain.PopularKeyword;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
@@ -20,6 +21,7 @@ public class PopularKeywordRepositoryTest {
     private PopularKeywordRepository popularKeywordRepository;
 
     @Test
+    @DisplayName("인기 키워드 중 상위 10개 조회 테스트")
     void testFindTop10ByOrderByCountDesc() {
         PopularKeyword popularKeyword1 = new PopularKeyword("keyword1", 5);
         PopularKeyword popularKeyword2 = new PopularKeyword("keyword2", 4);
@@ -34,6 +36,7 @@ public class PopularKeywordRepositoryTest {
     }
 
     @Test
+    @DisplayName("인기 키워드 조회 테스트")
     void testFindByKeyword() {
         PopularKeyword popularKeyword = new PopularKeyword("keyword1", 5);
         popularKeywordRepository.save(popularKeyword);
@@ -45,6 +48,7 @@ public class PopularKeywordRepositoryTest {
     }
 
     @Test
+    @DisplayName("인기 키워드 저장 테스트")
     void testSave() {
         PopularKeyword popularKeyword = new PopularKeyword("keyword1", 5);
         popularKeywordRepository.save(popularKeyword);
@@ -52,6 +56,7 @@ public class PopularKeywordRepositoryTest {
         Optional<PopularKeyword> result = popularKeywordRepository.findById(popularKeyword.getId());
 
         assertTrue(result.isPresent());
-        assertEquals(popularKeyword, result.get());
+        assertEquals(popularKeyword.getKeyword(), result.get().getKeyword());
+        assertEquals(popularKeyword.getCount(), result.get().getCount());
     }
 }

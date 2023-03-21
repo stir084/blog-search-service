@@ -4,6 +4,7 @@ import com.example.modulecommon.dto.BlogSearchResultDto;
 import com.example.modulecommon.dto.KakaoBlogSearchResultDto;
 import com.example.modulecommon.dto.PopularKeywordDto;
 import com.example.modulecore.service.BlogSearchService;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
@@ -34,6 +35,7 @@ public class BlogSearchControllerTest {
     private BlogSearchService blogSearchService;
 
     @Test
+    @DisplayName("블로그 검색 API 테스트")
     void searchBlog() throws Exception {
         KakaoBlogSearchResultDto kakaoBlogSearchResultDto = getKakaoBlogSearchResultDto();
         BlogSearchResultDto mockResult = new BlogSearchResultDto(kakaoBlogSearchResultDto);
@@ -52,6 +54,7 @@ public class BlogSearchControllerTest {
     }
 
     @Test
+    @DisplayName("인기 검색어 조회 API 테스트")
     void getPopularKeywords() throws Exception {
         PopularKeywordDto mockKeyword = new PopularKeywordDto("test", 5);
         List<PopularKeywordDto> mockKeywords = Collections.singletonList(mockKeyword);

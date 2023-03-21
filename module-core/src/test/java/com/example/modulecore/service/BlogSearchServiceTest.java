@@ -11,6 +11,7 @@ import com.example.moduleexternalapi.api.BlogSearchSortType;
 import com.example.moduleexternalapi.api.KakaoBlogSearchProvider;
 import com.example.moduleexternalapi.api.NaverBlogSearchProvider;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.ArgumentCaptor;
@@ -54,6 +55,7 @@ public class BlogSearchServiceTest {
     }
 
     @Test
+    @DisplayName("블로그 검색 결과 반환하는지 테스트")
     void testSearchBlogReturnsResult() {
         String keyword = "test";
         String sort = "accuracy";
@@ -80,6 +82,7 @@ public class BlogSearchServiceTest {
     }
 
     @Test
+    @DisplayName("카카오 블로그 API 성공 시 검색 결과 반환하는지 테스트")
     void searchBlog_when_KakaoProviderSuccess() {
         String keyword = "test";
         String sort = "accuracy";
@@ -99,6 +102,7 @@ public class BlogSearchServiceTest {
     }
 
     @Test
+    @DisplayName("카카오 블로그 API 실패, 네이버 블로그 API 성공 시 검색 결과 반환하는지 테스트")
     void searchBlog_when_KakaoProviderFailure_NaverProviderSuccess() {
         String keyword = "test";
         String sort = "accuracy";
@@ -123,6 +127,7 @@ public class BlogSearchServiceTest {
     }
 
     @Test
+    @DisplayName("카카오 블로그 API 실패, 네이버 블로그 API 실패 시 예외 발생하는지 테스트")
     void searchBlog_when_KakaoProviderFailure_NaverProviderFailure() {
         String keyword = "test";
         String sort = "accuracy";
@@ -140,6 +145,7 @@ public class BlogSearchServiceTest {
     }
 
     @Test
+    @DisplayName("인기 검색어 목록 조회하는지 테스트")
     void testGetPopularKeywords() {
         List<PopularKeyword> popularKeywordList = Arrays.asList(
                 new PopularKeyword("carrot", 5),
@@ -158,6 +164,7 @@ public class BlogSearchServiceTest {
     }
 
     @Test
+    @DisplayName("기존 인기 검색어 업데이트하는지 테스트")
     void testUpdatePopularKeywordWithExistingKeyword() {
         String keyword = "test";
         PopularKeyword existingPopularKeyword = new PopularKeyword(keyword, 1);
@@ -172,6 +179,7 @@ public class BlogSearchServiceTest {
     }
 
     @Test
+    @DisplayName("새로운 인기 검색어 추가하는지 테스트")
     void testUpdatePopularKeywordWithNewKeyword() {
         String keyword = "test";
 
