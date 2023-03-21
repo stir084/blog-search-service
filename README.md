@@ -90,5 +90,5 @@ Ehcache는 적용하기가 쉽고 백단의 DB가 죽어도 캐시된 시간만�
   
 ![image](https://user-images.githubusercontent.com/47946124/226195282-c287d649-a311-494d-94a8-71f90bfb3d1c.png)
 
-카카오 블로그 검색 API에 장애가 발생한 경우 일반적으로 500 Error가 발생했다고 가정했습니다.(물론 503 Error도 있지만)
+카카오 블로그 검색 API에 장애가 발생한 경우 일반적으로 500 Error가 발생했다고 가정했습니다.(물론 503 Error도 있지만)  
 500 Error 발생 시 예외를 잡아서 던지지 않고 for문을 이용해 SearchProvider를 구현한 API를 반복적으로 돌아서 그 다음의 API를 통해 데이터를 제공하는 형태로 구현했습니다.
