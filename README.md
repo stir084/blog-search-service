@@ -36,6 +36,10 @@ http://localhost:8080/docs/dev-guide.html
   
 기본적인 REST API 예외는 @ControllerAdvice로 구현하고 WebClient를 통해 외부 API에서 발생한 예외를 그대로 받아서 처리하는 BlogSearchEngineResponseException 클래스 파일을 생성해서 사용했습니다.
 
+## 멀티 모듈 
+
+![image](https://user-images.githubusercontent.com/47946124/226524546-b3385560-5425-4838-98e4-05493ae970fd.png)
+
 
 ## 트래픽이 많고, 저장되어 있는 데이터가 많음을 염두에 둔 구현  
    
