@@ -94,7 +94,7 @@ Ehcache는 적용하기가 쉽고 백단의 DB가 죽어도 캐시된 시간만�
 검색 횟수의 동시성 이슈가 발생할 여지로 인해 Pessimistic Lock을 사용했습니다.  
 하지만 이미 이 부분에 있어서는 MYSQL의 MVCC 기능도 적용된다고 생각하는데 이유는 아래와 같습니다.
 
-- [MVCC가 적용된다고 생각하는 이유](https://github.com/stir084/blog-search-engine/wiki/MVCC%EA%B0%80-%EC%A0%81%EC%9A%A9%EB%90%9C%EB%8B%A4%EA%B3%A0-%EC%83%9D%EA%B0%81%ED%95%98%EB%8A%94-%EC%9D%B4%EC%9C%A0)
+- [MVCC가 적용된다고 생각하는 이유](https://github.com/stir084/blog-search-service/wiki/MVCC%EA%B0%80-%EC%A0%81%EC%9A%A9%EB%90%9C%EB%8B%A4%EA%B3%A0-%EC%83%9D%EA%B0%81%ED%95%98%EB%8A%94-%EC%9D%B4%EC%9C%A0)
 
 
 
