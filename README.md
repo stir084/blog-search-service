@@ -2,7 +2,7 @@
 
 ## 다운로드 링크
 
-https://github.com/stir084/blog-search-engine/raw/master/blog-search-engine.jar
+https://github.com/stir084/blog-search-service/releases/download/v1.0.0/blog-search-service.jar
 
 ## API 명세서(Spring Rest Docs)
 
