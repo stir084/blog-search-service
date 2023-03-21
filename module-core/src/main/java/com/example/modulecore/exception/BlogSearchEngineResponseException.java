@@ -1,5 +1,4 @@
-package com.example.modulecommon.exception;
-
+package com.example.modulecore.exception;
 
 import org.springframework.http.HttpStatusCode;
 

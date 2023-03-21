@@ -1,4 +1,4 @@
-package com.example.modulecommon.exception;
+package com.example.modulecore.exception;
 
 import lombok.Getter;
 import lombok.Setter;

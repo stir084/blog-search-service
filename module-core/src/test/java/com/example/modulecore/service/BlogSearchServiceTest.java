@@ -4,7 +4,7 @@ package com.example.modulecore.service;
 import com.example.modulecommon.dto.BlogSearchResultDto;
 import com.example.modulecommon.dto.KakaoBlogSearchResultDto;
 import com.example.modulecommon.dto.PopularKeywordDto;
-import com.example.modulecommon.exception.AllSearchProvidersFailedException;
+import com.example.modulecore.exception.AllSearchProvidersFailedException;
 import com.example.modulecore.domain.PopularKeyword;
 import com.example.modulecore.repository.PopularKeywordRepository;
 import com.example.moduleexternalapi.api.BlogSearchSortType;
