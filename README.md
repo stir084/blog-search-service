@@ -4,7 +4,7 @@
 
 https://github.com/stir084/blog-search-engine/raw/master/blog-search-engine.jar
 
-## API 명세서
+## API 명세서(Spring Rest Docs)
 
 http://localhost:8080/docs/dev-guide.html
 
