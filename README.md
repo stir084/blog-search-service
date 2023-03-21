@@ -11,7 +11,7 @@ http://localhost:8080/docs/dev-guide.html
 ## 기술 스택
 - Java 17
 - Sping Boot 3.0.2
-- H2 (1.4.199)
+- H2 (1.4.199 testdb 사용)
 - JPA
 - Junit 5
 - WebFlux - **WebClient를 통한 API 호출을 위해 사용했습니다.**  
