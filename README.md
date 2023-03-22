@@ -35,7 +35,7 @@ http://localhost:8080/docs/dev-guide.html
   
 
 ## 카카오 API 이외에 새로운 검색 소스가 추가될 수 있음을 고려하기(Naver API 추가)
-→ **Interface로 새로운 검색 소스에 대한 확장성 고려했습니다.**  
+→ **Interface로 새로운 검색 소스에 대한 확장성을 고려했습니다.**  
    
   
 ![image](https://user-images.githubusercontent.com/47946124/226191457-cad0f990-badd-479b-85e6-e981e245df40.png)  
