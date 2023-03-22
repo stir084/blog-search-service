@@ -4,6 +4,7 @@ import com.example.modulecommon.dto.BlogSearchResultDto;
 import com.example.modulecommon.dto.KakaoBlogSearchResultDto;
 import com.example.modulecommon.dto.PopularKeywordDto;
 import com.example.modulecore.service.BlogSearchService;
+
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
