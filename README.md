@@ -106,7 +106,7 @@ WebClient를 통한 외부 API에서 발생한 예외 또한 사용자가 볼 �
 → **Ehcache를 사용해 부하 개선**  
    
   
-![image](https://user-images.githubusercontent.com/47946124/226895627-63c1cb75-9822-4074-8b28-dfd07b9f2607.png
+![image](https://user-images.githubusercontent.com/47946124/226917105-daf9d0a6-29de-4de9-b796-1927f4f41a5e.png)
 
 ![image](https://user-images.githubusercontent.com/47946124/226896096-dff5b8b3-20de-4953-ae5d-e70c5c364cc6.png)
   
