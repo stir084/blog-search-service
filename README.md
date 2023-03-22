@@ -2,7 +2,7 @@
 
 ## 다운로드 링크
 
-https://github.com/stir084/blog-search-service/releases/download/v1.0.0/blog-search-service-v0.0.1.jar
+https://github.com/stir084/blog-search-service/releases/download/v1.0.0/blog-search-service-v1.0.0.jar
 
 ## 실행 방법  
 
