@@ -40,7 +40,7 @@ http://localhost:8080/docs/dev-guide.html
   
 ![image](https://user-images.githubusercontent.com/47946124/226894924-8c336794-6def-408d-b8b8-db3e310304ed.png)
   
-![image](https://user-images.githubusercontent.com/47946124/226895031-c8a5d586-52ae-4ea2-8939-ea83d8e09803.png)
+![image](https://user-images.githubusercontent.com/47946124/226897033-5d6f571c-f595-41cd-8239-c786353005a3.png)
 
 
 스프링을 활용해 해당 Interface를 상속받는 구현체에 각각의 검색 API를 구현하여 언제든지 API 소스 대체가 가능합니다.  
