@@ -95,7 +95,7 @@ WebClient를 통한 외부 API에서 발생한 예외 또한 사용자가 볼 �
 
 외부 API를 모듈화 했으며 해당 API를 여러 곳에서 갖다 쓸 수 있도록 모듈화 했습니다.  
 
-**module-common (dto, Utility, Constant)**  
+**module-common (dto, utility, constant)**  
 
 각 모듈의 프로젝트마다 갖다 쓸 수 있는 부분은 common으로 모듈화 했으며 다른 의존성이 포함되어있지 않고 순수 Java만을 이용한 파일들을 모듈화 했습니다.
   
