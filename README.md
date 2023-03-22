@@ -38,13 +38,18 @@ http://localhost:8080/docs/dev-guide.html
 → **Interface로 새로운 검색 소스에 대한 확장성을 고려했습니다.**  
    
   
-![image](https://user-images.githubusercontent.com/47946124/226191457-cad0f990-badd-479b-85e6-e981e245df40.png)  
+![image](https://user-images.githubusercontent.com/47946124/226894924-8c336794-6def-408d-b8b8-db3e310304ed.png)
+  
+![image](https://user-images.githubusercontent.com/47946124/226895031-c8a5d586-52ae-4ea2-8939-ea83d8e09803.png)
 
 
 스프링을 활용해 해당 Interface를 상속받는 구현체에 각각의 검색 API를 구현하여 언제든지 API 소스 대체가 가능합니다.  
 Bean 프록시 객체를 인터페이스로 들고 오는 것이 아니라 구현체를 Bean으로 들고와서 사용했습니다.(spring.aop.proxy-target-class=true)  
   
-![image](https://user-images.githubusercontent.com/47946124/226195282-c287d649-a311-494d-94a8-71f90bfb3d1c.png)  
+![image](https://user-images.githubusercontent.com/47946124/226895159-0364fb1e-0e85-4836-b967-6f7a70b15ff7.png)
+  
+![image](https://user-images.githubusercontent.com/47946124/226895260-5315e660-f83a-46a6-b12f-85b661c6478a.png)
+  
 
 카카오 블로그 검색 API에 장애가 발생한 경우 네이버 블로그 검색 API를 통한 데이터 제공을 위해 위와 같이 구현했습니다.  
 API 서버에 장애가 발생한 경우 일반적으로 500 Error가 발생했다고 가정했습니다.(물론 503 Error도 있지만)  
@@ -74,7 +79,8 @@ WebClient를 통한 외부 API에서 발생한 예외 또한 사용자가 볼 �
 ## 멀티 모듈 구성 및 모듈간 의존성 제약
   
   
-![image](https://user-images.githubusercontent.com/47946124/226533158-2d3bc1c4-83bf-43fc-9a54-5fbf12d4f402.png)
+![image](https://user-images.githubusercontent.com/47946124/226895463-086f90aa-e5ab-48e1-945f-5d74d0c4e01b.png)
+
 
 **module-client - (controller)**  
 
@@ -100,13 +106,17 @@ WebClient를 통한 외부 API에서 발생한 예외 또한 사용자가 볼 �
 → **Ehcache를 사용해 부하 개선**  
    
   
-![image](https://user-images.githubusercontent.com/47946124/226192129-ae41d97b-3bc0-4ede-a805-b53aab905be4.png)  
+![image](https://user-images.githubusercontent.com/47946124/226895627-63c1cb75-9822-4074-8b28-dfd07b9f2607.png
+
+![image](https://user-images.githubusercontent.com/47946124/226896096-dff5b8b3-20de-4953-ae5d-e70c5c364cc6.png)
+  
 인기 검색어 목록은 트래픽이 많고 저장되어 있는 데이터가 굉장히 많기 때문에 실시간 반응보다 캐시를 이용하는 것이 DB 부하를 줄일 수 있어서 Ehcache를 사용했습니다.  
 Ehcache는 적용하기가 쉽고 백단의 DB가 죽어도 캐시된 시간만큼은 데이터를 보장 받는다는 장점이 있습니다.  
 30초마다 캐시가 삭제되도록 구현했습니다.  
 
 상위 인기 검색어를 확인하기 위해 임시 Dummy 데이터를 삽입하여 확인했습니다.  
-![image](https://user-images.githubusercontent.com/47946124/226527768-4d8ee5b1-1446-425c-8f53-c71dcc802ff1.png)
+![image](https://user-images.githubusercontent.com/47946124/226896250-b468f1f4-c89a-487b-b94f-5ed88933aa89.png)
+
 
 
 ## 동시성 이슈가 발생할 수 있는 부분을 염두에 둔 구현
